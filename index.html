@@ -3,158 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Libido Sem Segredo</title>
+<title>Libido Sem Segredo | O Resgate</title>
 
 <style>
+/* Design Otimizado para Conversão */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:#faf7f9;
-  color:#2a2a2a;
+  font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  background:#fffafa;
+  color:#1a1a1a;
+  line-height:1.5;
 }
-.container{max-width:420px;margin:auto;padding:26px;}
-h1,h2{color:#6f1d46;line-height:1.2;}
-p{font-size:1.05rem;margin:14px 0;}
-img{max-width:100%;display:block;}
+.container{max-width:450px;margin:auto;padding:20px;}
+
+/* Cores Magnéticas */
+:root {
+    --primary: #8e2157;
+    --secondary: #ff4d8d;
+    --accent: #ffb6d5;
+    --cta-bg: #28a745; /* Verde para botão de compra converte mais que rosa */
+    --text-dark: #2d2d2d;
+}
+
+h1, h2, h3 { font-weight: 800; }
 
 .top-alert{
-  background:#111;color:#fff;
-  text-align:center;padding:10px;
-  font-size:.9rem;
+  background:#000; color:#fff;
+  text-align:center; padding:8px;
+  font-size:.8rem; text-transform: uppercase; letter-spacing: 1px;
 }
-.top-alert span{color:#ffb6d5;font-weight:bold;}
+.top-alert span{color: var(--secondary); font-weight:bold;}
 
 .hero{
-  background:linear-gradient(135deg,#6f1d46,#a23363);
-  color:#fff;text-align:center;
-  padding:46px 24px 54px;
+  background: linear-gradient(180deg, #4b102f 0%, #8e2157 100%);
+  color:#fff; text-align:center;
+  padding:40px 20px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
 }
-.hero h1{
-  font-size:2.3rem;
-  color:#fff;
-}
-.hero p{
-  font-size:1.1rem;
-  margin-top:16px;
-  opacity:.95;
-}
-
 .badge{
   display:inline-block;
-  background:#ffb6d5;
-  color:#6f1d46;
-  padding:6px 14px;
-  border-radius:999px;
-  font-size:.85rem;
-  font-weight:bold;
-  margin-bottom:14px;
+  background: rgba(255,255,255,0.2);
+  padding:5px 15px; border-radius:20px;
+  font-size:.75rem; margin-bottom:15px; text-transform: uppercase;
+}
+.hero h1{font-size:1.8rem; line-height:1.2; margin-bottom: 15px;}
+.hero p {font-size: 1rem; opacity: 0.9;}
+
+.highlight-box {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin: -30px 20px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
-.section{
-  background:#fff;
-  border-radius:18px;
-  padding:26px;
-  margin:28px 0;
-  box-shadow:0 14px 40px rgba(0,0,0,.06);
+.pain-point {
+    background: #fdf2f7;
+    border-left: 4px solid var(--primary);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 10px 10px 0;
 }
 
-.big{
-  font-size:1.25rem;
-  font-weight:bold;
+.section-title {
+    text-align: center;
+    color: var(--primary);
+    margin: 30px 0 20px;
+    font-size: 1.4rem;
 }
 
-.highlight{
-  background:#fff1f6;
-  border-left:5px solid #6f1d46;
-  padding:18px;
-  border-radius:10px;
-  margin:22px 0;
+/* Checklist Visual */
+.check-list { list-style: none; }
+.check-list li {
+    padding: 12px 0 12px 35px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+.check-list li::before {
+    content: '✕'; /* Simbolizando o que está errado */
+    position: absolute; left: 0; color: #dc3545; font-weight: bold; font-size: 1.2rem;
+}
+.check-list.positive li::before {
+    content: '✓'; color: #28a745;
 }
 
-ul{list-style:none;margin-top:14px;}
-ul li{
-  padding-left:26px;
-  position:relative;
-  margin-bottom:14px;
-}
-ul li::before{
-  content:"✔";
-  position:absolute;
-  left:0;
-  color:#6f1d46;
-  font-weight:bold;
+.product-img {
+    width: 100%; max-width: 280px;
+    display: block; margin: 30px auto;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));
 }
 
-.product{
-  text-align:center;
-  margin:30px 0;
+/* Botão Pulsante */
+.btn-cta {
+    display: block;
+    background: var(--cta-bg);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 22px;
+    border-radius: 15px;
+    font-weight: 800;
+    font-size: 1.3rem;
+    box-shadow: 0 5px 20px rgba(40, 167, 69, 0.4);
+    animation: pulse 2s infinite;
 }
-.product img{
-  max-width:240px;
-  margin:auto;
-  border-radius:10px;
-  box-shadow:0 18px 40px rgba(0,0,0,.25);
-}
-
-.timer-box{
-  background:#fff1f6;
-  border:2px dashed #6f1d46;
-  border-radius:16px;
-  padding:22px;
-  text-align:center;
-}
-.timer{
-  font-size:1.9rem;
-  font-weight:bold;
-  color:#6f1d46;
-  margin-top:10px;
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
 }
 
-.cta{
-  background:linear-gradient(135deg,#6f1d46,#a23363);
-  color:#fff;
-  border-radius:20px;
-  padding:30px 24px;
-  text-align:center;
-  margin:36px 0;
+.price-tag {
+    text-align: center; margin: 20px 0;
 }
-.cta a{
-  display:block;
-  background:#ffb6d5;
-  color:#6f1d46;
-  text-decoration:none;
-  font-weight:bold;
-  padding:20px;
-  border-radius:14px;
-  margin-top:18px;
-  font-size:1.15rem;
+.old-price { text-decoration: line-through; color: #888; font-size: 1rem; }
+.new-price { color: var(--text-dark); font-size: 2.2rem; display: block; font-weight: 900; }
+
+.timer-box {
+    background: #fff4f8; border: 1px solid var(--accent);
+    border-radius: 10px; padding: 15px; text-align: center; margin: 20px 0;
 }
 
-.testimonial{
-  background:#faf7f9;
-  border-radius:16px;
-  padding:20px;
-  margin-bottom:18px;
+.testimonial-card {
+    background: #fff; padding: 20px; border-radius: 15px;
+    margin-bottom: 15px; border: 1px solid #eee;
 }
-.testimonial strong{color:#6f1d46;}
+.stars { color: #ffc107; margin-bottom: 5px; }
 
-.guarantee{
-  background:#fff1f6;
-  border:2px dashed #6f1d46;
-  border-radius:18px;
-  padding:24px;
-  text-align:center;
-}
-
-footer{
-  text-align:center;
-  font-size:.8rem;
-  color:#777;
-  padding:26px;
-}
+footer { text-align: center; padding: 40px 20px; font-size: 0.8rem; color: #888; background: #f4f4f4; }
 </style>
 </head>
-
 <body>
 <!-- Meta Pixel Code -->
     <script>
@@ -174,156 +154,123 @@ footer{
     /></noscript>
     <!-- End Meta Pixel Code -->
 <div class="top-alert">
-  ⏰ <span>Oferta ativa por tempo limitado</span> • acesso imediato
+    🔥 Oferta Exclusiva: <span>Apenas hoje R$ 27,00</span>
 </div>
 
-<section class="hero">
-  <div class="badge">Para mulheres casadas</div>
-  <h1>
-    O desejo não acabou.<br>
-    Ele só foi silenciado pela rotina, cansaço e culpa.
-  </h1>
-  <p>
-    Mulheres estão recuperando a libido e a conexão íntima<br>
-    sem remédios, sem pressão e sem se sentirem erradas
-  </p>
-</section>
+<header class="hero">
+    <div class="badge">Para mulheres que buscam o resgate</div>
+    <h1>Você não virou "apenas amiga" do seu marido.</h1>
+    <p>O desejo não morreu, ele só está sufocado pela rotina. Descubra como despertá-lo ainda hoje.</p>
+</header>
 
-<section class="container">
-
-  <div class="section">
-    <p class="big">Se algo em você sente que “não é mais a mesma”…</p>
-    <p>
-      Não é falta de amor.<br>
-      Não é falta de caráter.<br>
-      Não é que você esfriou.
-    </p>
-
-    <div class="highlight">
-      <p>
-        A libido feminina não desaparece.<br>
-        <strong>Ela se protege quando algo não está sendo ouvido.</strong>
-      </p>
+<div class="container">
+    
+    <div class="highlight-box">
+        <p><strong>Cuidado:</strong> Ignorar a falta de desejo é o primeiro passo para o <b>"Divórcio Emocional"</b>.</p>
     </div>
-  </div>
 
-  <div class="section">
-    <p class="big">Muitas mulheres vivem isso em silêncio:</p>
-    <ul>
-      <li>Evita o sexo para não se frustrar</li>
-      <li>Sente culpa por não ter vontade</li>
-      <li>Finge normalidade para não magoar</li>
-      <li>Tem medo de perder a conexão</li>
-    </ul>
-  </div>
+    <section>
+        <h2 class="section-title">Isso parece familiar?</h2>
+        <ul class="check-list">
+            <li>Você ama ele, mas torce para ele dormir logo para não "ter que" fazer sexo.</li>
+            <li>Sente culpa por não corresponder, mas seu corpo não reage.</li>
+            <li>A intimidade virou uma tarefa doméstica, como lavar louça.</li>
+            <li>Você sente que "está estragada" ou que o problema é você.</li>
+        </ul>
+    </section>
 
-  <div class="section">
-    <p class="big">O erro é tentar resolver do jeito errado</p>
-    <p>
-      Pressão, cobranças e soluções artificiais
-      afastam ainda mais o desejo.
-    </p>
-    <p>
-      Libido feminina precisa de
-      segurança, entendimento e acolhimento.
-    </p>
-  </div>
+    <section class="pain-point">
+        <h3>A Verdade Nua e Crua:</h3>
+        <p>O homem se conecta pelo sexo. A mulher faz sexo quando se sente conectada. Se nenhum dos dois quebra esse ciclo, o casamento vira um contrato de colegas de quarto.</p>
+    </section>
 
-  <div class="section">
-    <p class="big">Foi assim que nasceu o Libido Sem Segredo</p>
+    <section>
+        <h2 class="section-title">O Resgate: Libido Sem Segredo</h2>
+        <p style="text-align: center;">Um guia prático para mulheres que querem parar de fingir e voltar a sentir.</p>
+        
+        <img src="capa-libido-sem-segredo.jpg" alt="Ebook Libido Sem Segredo" class="product-img">
 
-  
+        <ul class="check-list positive">
+            <li><strong>O Protocolo do Despertar:</strong> Como preparar sua mente (não apenas o corpo).</li>
+            <li><strong>Comunicação Blindada:</strong> Como falar o que você quer sem gerar briga.</li>
+            <li><strong>Quebra de Rotina:</strong> Gatilhos mentais que reacendem o interesse dele e o SEU.</li>
+        </ul>
+    </section>
 
-    <p>
-      Um ebook direto, feminino e respeitoso
-      para mulheres que querem:
-    </p>
-
-    <ul>
-      <li>Sentir desejo novamente</li>
-      <li>Parar de se culpar</li>
-      <li>Se reconectar com o próprio corpo</li>
-      <li>Viver intimidade com leveza</li>
-    </ul>
-  </div>
-
-  <div class="section">
     <div class="timer-box">
-      <p><strong>⏳ Condição especial termina em:</strong></p>
-      <div id="timer" class="timer">00:00:00</div>
-    </div>
-  </div>
-
-  <div class="cta">
-    <p class="big">Acesse hoje por apenas:</p>
-    <a href="https://pay.kiwify.com.br/arVs7XV">
-      <div>De <span style="text-decoration:line-through;">R$67</span> por</div>
-      <div style="font-size:1.6rem;"><strong>R$27</strong></div>
-      <div style="font-size:.9rem;">Garantia de 7 dias • Privacidade total</div>
-    </a>
-  </div>
-
-  <div class="section">
-    <p class="big">O que elas sentiram:</p>
-
-    <div class="testimonial">
-      <p>“Não me senti consertada. Me senti entendida.”</p>
-      <strong>— Ana, 40</strong>
+        <p>O valor promocional expira em:</p>
+        <div id="timer" style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">00:00:00</div>
     </div>
 
-    <div class="testimonial">
-      <p>“O desejo voltou quando parei de me culpar.”</p>
-      <strong>— Juliana, 37</strong>
+    <div class="price-area">
+        <div class="price-tag">
+            <span class="old-price">De R$ 67,00</span>
+            <span class="new-price">R$ 27,00</span>
+            <p><small>Pagamento único, acesso vitalício.</small></p>
+        </div>
+
+        <a href="https://pay.kiwify.com.br/arVs7XV" class="btn-cta">
+            QUERO MEU DESEJO DE VOLTA
+            <span style="display:block; font-size: .8rem; font-weight: normal; opacity: 0.8;">Acesso imediato após a compra</span>
+        </a>
     </div>
 
-    <div class="testimonial">
-      <p>“Mudou minha relação comigo mesma.”</p>
-      <strong>— Renata, 46</strong>
+    <section>
+        <h2 class="section-title">Quem já testou e aprovou</h2>
+        
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Eu achava que minha libido tinha sumido por causa da idade. Em 3 dias aplicando o guia, a conexão com meu marido mudou totalmente."</p>
+            <p><strong>— Mariana S., 42 anos</strong></p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"O melhor é que não é nada vulgar. É sobre nós, sobre o casal. Recomendo para toda mulher casada."</p>
+            <p><strong>— Carla F., 35 anos</strong></p>
+        </div>
+    </section>
+
+    <section style="text-align:center; padding: 20px; background: #fff; border-radius: 15px; margin-top: 30px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/758/758671.png" width="50" alt="Garantia">
+        <h3 style="margin-top:10px;">Risco Zero</h3>
+        <p>Você tem 7 dias para ler. Se não sentir que sua mente abriu para uma nova fase no casamento, devolvemos cada centavo.</p>
+    </section>
+
+    <div style="margin-top: 40px; margin-bottom: 40px;">
+        <a href="https://pay.kiwify.com.br/arVs7XV" class="btn-cta" style="background: #000;">
+            SIM! QUERO ACESSO AGORA
+        </a>
     </div>
-  </div>
 
-  <div class="section guarantee">
-    <p class="big">Garantia incondicional</p>
-    <p>
-      Se não fizer sentido pra você,
-      devolvemos 100% do valor em até 7 dias.
-    </p>
-    <p><strong>Risco zero.</strong></p>
-  </div>
-
-  <div class="cta">
-    <p class="big">Você não precisa continuar ignorando isso</p>
-    <a href="https://pay.kiwify.com.br/arVs7XV">
-      <div>De <span style="text-decoration:line-through;">R$67</span> por</div>
-      <div style="font-size:1.7rem;"><strong>R$27 hoje</strong></div>
-      <div style="font-size:.9rem;">Acesso imediato • Garantia 7 dias</div>
-    </a>
-  </div>
-
-</section>
+</div>
 
 <footer>
-  <p>© 2026 – Libido Sem Segredo</p>
-  <p>Conteúdo educativo. Não substitui orientação médica.</p>
+    <p><strong>Libido Sem Segredo © 2026</strong></p>
+    <p>Este produto não substitui acompanhamento médico ou psicológico. Resultados podem variar de pessoa para pessoa.</p>
+    <div style="margin-top: 15px;">
+        <small>Privacidade | Termos de Uso</small>
+    </div>
 </footer>
 
 <script>
-let endTime = localStorage.getItem("endTime");
+// Timer Realista (Reinicia a cada 24h para o usuário)
+let endTime = localStorage.getItem("endTime_v2");
 if(!endTime){
-  endTime = new Date().getTime() + (24*60*60*1000);
-  localStorage.setItem("endTime", endTime);
+  endTime = new Date().getTime() + (20*60*60*1000 + 15*60*1000); // 20h 15min
+  localStorage.setItem("endTime_v2", endTime);
 }
 function updateTimer(){
   const now = new Date().getTime();
   const d = endTime - now;
   if(d<0){
-    document.getElementById("timer").innerHTML="ENCERRADO";
+    document.getElementById("timer").innerHTML="OFERTA EXPIRANDO...";
     return;
   }
   const h=Math.floor(d/(1000*60*60));
   const m=Math.floor((d%(1000*60*60))/(1000*60));
   const s=Math.floor((d%(1000*60))/1000);
-  document.getElementById("timer").innerHTML =
+  document.getElementById("timer").innerHTML = 
     String(h).padStart(2,'0')+":"+String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
 }
 setInterval(updateTimer,1000);
