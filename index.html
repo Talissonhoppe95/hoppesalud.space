@@ -1,138 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Resgate | Libido Sem Segredo</title>
-    <!-- Fontes Premium -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>El Interruptor de Grasa™ - Método Japonés</title>
+    <!-- Fontes de Autoridade -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
-        /* CONFIGURAÇÕES GERAIS E CORES */
+        /* CSS - DESIGN DE ALTA CONVERSÃO */
         :root {
-            --primary: #720e3d;       /* Vinho Elegante */
-            --secondary: #d42a62;     /* Rosa Forte */
-            --accent: #fff0f5;        /* Fundo Rosa Suave */
-            --cta-bg: #28a745;        /* Verde Conversão */
-            --text-dark: #2d2d2d;
-            --gold: #c5a059;          /* Dourado para Bônus */
+            --primary-color: #004151; /* Azul Petróleo Autoridade */
+            --accent-color: #FF8C00;  /* Laranja Ação */
+            --bg-light: #F9F9F9;
+            --text-dark: #222;
+            --white: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
+            margin: 0;
+            padding: 0;
             font-family: 'Montserrat', sans-serif;
-            background: #fdfafb;
+            background-color: var(--bg-light);
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        .container { max-width: 500px; margin: auto; padding: 0 20px; }
-
-        /* HEADER E ALERTA */
-        .top-alert {
-            background: #000; color: #fff;
-            text-align: center; padding: 10px;
-            font-size: 0.75rem; font-weight: bold; text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .top-alert b { color: var(--secondary); }
-
-        .hero {
-            background: linear-gradient(135deg, #3d0821 0%, #720e3d 100%);
-            color: #fff; text-align: center;
-            padding: 50px 20px 80px;
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-        }
-
-        .badge {
-            display: inline-block;
-            background: var(--gold);
-            color: #000;
-            padding: 5px 15px; border-radius: 5px;
-            font-size: 0.7rem; font-weight: 800; margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem; line-height: 1.1; margin-bottom: 20px;
-        }
-
-        .hero p { font-size: 1.1rem; color: #ffb6d5; opacity: 0.9; }
-
-        /* BOX DE HISTÓRIA / DOR */
-        .story-box {
-            background: #fff;
-            border-radius: 20px;
-            padding: 30px 25px;
-            margin: -40px 10px 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border: 1px solid #eee;
-        }
-
-        .section-title {
+        /* Banner de Escassez */
+        .scarcity-banner {
+            background-color: #d10000;
+            color: white;
             text-align: center;
-            color: var(--primary);
-            margin: 40px 0 20px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        /* FASES DO MÉTODO */
-        .step-card {
-            background: var(--accent);
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border-left: 6px solid var(--primary);
-        }
-        .step-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.1rem; }
-
-        /* IMAGEM DO PRODUTO */
-        .product-img {
-            width: 100%; max-width: 300px;
-            display: block; margin: 30px auto;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.2));
         }
 
-        /* ÁREA DE PREÇO E BÔNUS */
-        .bonus-box {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 25px;
-            border-radius: 20px;
-            margin: 40px 0;
-        }
-        .bonus-box h3 { color: var(--gold); text-align: center; margin-bottom: 15px; }
-        .bonus-item { 
-            display: flex; margin-bottom: 10px; font-size: 0.9rem; 
-            border-bottom: 1px solid #333; padding-bottom: 5px;
-        }
-        .bonus-item b { color: var(--secondary); margin-right: 5px; }
-
-        .price-tag {
-            text-align: center; margin: 40px 0 20px;
-        }
-        .old-price { text-decoration: line-through; color: #888; font-size: 1.2rem; }
-        .new-price { 
-            color: var(--text-dark); font-size: 3.5rem; 
-            display: block; font-weight: 900; line-height: 1;
-        }
-
-        /* BOTÃO PULSANTE */
-        .btn-cta {
-            display: block;
-            background: var(--cta-bg);
-            color: #fff;
-            text-decoration: none;
+        /* Headline */
+        header {
             text-align: center;
-            padding: 25px 15px;
-            border-radius: 15px;
-            font-weight: 800;
-            font-size: 1.4rem;
-            box-shadow: 0 10px 25px rgba(40, 167, 69, 0.4);
+            padding: 40px 20px;
+            background: linear-gradient(rgba(0,65,81,0.9), rgba(0,65,81,0.9)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            color: white;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .highlight { color: var(--accent-color); }
+
+        /* VSL (Vídeo Placeholder) */
+        .vsl-container {
+            background: #000;
+            width: 100%;
+            aspect-ratio: 16/9;
+            margin: 30px 0;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Slippery Slope Text Section */
+        .story-section {
+            padding: 40px 0;
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        .story-section p {
+            margin-bottom: 25px;
+        }
+
+        .bold { font-weight: 700; }
+
+        /* Botão Pulsante */
+        .cta-button {
+            display: block;
+            background-color: var(--accent-color);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 40px 0;
             animation: pulse 2s infinite;
+            box-shadow: 0px 5px 15px rgba(255,140,0,0.4);
         }
 
         @keyframes pulse {
@@ -141,110 +113,153 @@
             100% { transform: scale(1); }
         }
 
-        .guarantee-box {
-            display: flex; align-items: center;
-            background: #fff; padding: 20px;
-            border-radius: 15px; margin-top: 30px;
-            border: 1px solid #eee; font-size: 0.85rem;
+        /* Bonus Cards */
+        .bonus-box {
+            background: white;
+            border: 2px dashed var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
         }
 
-        footer { 
-            background: #111; color: #666; 
-            text-align: center; padding: 40px 20px; 
-            margin-top: 50px; font-size: 0.75rem; 
+        .bonus-tag {
+            background: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Trust Section */
+        .trust-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .trust-icons img {
+            height: 40px;
+            filter: grayscale(1);
+            opacity: 0.7;
+        }
+
+        footer {
+            background: #eee;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .cta-button { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
-<!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '5473321836103598');
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=5473321836103598&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-    <div class="top-alert">
-        ⚠️ Restam apenas <b>14 unidades</b> promocionais hoje.
+
+    <div class="scarcity-banner">
+        ⚠️ OFERTA VÁLIDA SOLO PARA LAS PRÓXIMAS <span id="slots">14</span> PERSONAS EN <span id="city">TU CIUDAD</span>
     </div>
 
-    <header class="hero">
-        <div class="badge">MÉTODO COMPROVADO</div>
-        <h1>O seu casamento está morrendo no <u>silêncio</u> do seu quarto?</h1>
-        <p>Descubra como reativar seu desejo feminino em até 72h, mesmo que você sinta que seu corpo "pifou".</p>
+    <header>
+        <div class="container">
+            <h1>El secreto japonés de 30 segundos que <span class="highlight">"enciende"</span> tu metabolismo cada mañana</h1>
+            <p>Mira este video antes de que sea eliminado de internet.</p>
+            
+            <div class="vsl-container">
+                <!-- Coloque aqui o link do seu vídeo (Vimeo/Youtube/Vturb) -->
+                <p style="color:white">► CLIC PARA REPRODUCIR EL VIDEO</p>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        
-        <div class="story-box">
-            <p>Você deita na cama e reza para ele não te tocar? Não é que você não o ame... mas o sexo virou uma <b>tarefa cansativa</b> como lavar a louça.</p>
-            <br>
-            <p>Se você não quebrar esse ciclo, o <b>"Divórcio Emocional"</b> é o próximo passo. Mas a culpa não é sua. É biológica.</p>
+    <main class="container">
+        <section class="story-section">
+            <p>Durante mucho tiempo, <span class="bold">pensé que el problema era yo.</span></p>
+            <p>Falta de voluntad. Falta de disciplina. Falta de amor propio.</p>
+            <p>Me despertaba cansada, me miraba al espejo y ya no reconocía a esa mujer...</p>
+            <p>Pero lo que descubrí en un pequeño parque de Japón cambió mi destino para siempre.</p>
+            
+            <p style="text-align:center; font-style:italic;">"El cuerpo no decide quemar grasa por voluntad propia, lo hace por señales químicas."</p>
+
+            <p>Ese es el <span class="bold">Interruptor de Grasa™</span>. Un botón biológico que tienes dentro, pero que ha estado apagado por años.</p>
+            <p>Cuando este interruptor está apagado, puedes comer solo ensaladas y tu cuerpo seguirá guardando grasa en tu panza y caderas.</p>
+            <p>Pero cuando lo enciendes... <span class="bold">todo cambia.</span></p>
+        </section>
+
+        <!-- SEÇÃO DE OFERTA -->
+        <div style="background: var(--primary-color); color: white; padding: 30px; border-radius: 15px; text-align: center;">
+            <h2 style="font-family: 'Playfair Display';">¿Lista para activar tu Interruptor?</h2>
+            <p>Obtén el método completo más estos 3 bonos exclusivos hoy:</p>
+
+            <div class="bonus-box" style="color: #222;">
+                <span class="bonus-tag">GRATIS</span>
+                <h3>1. Protocolo Vientre Plano (72h)</h3>
+                <p>La técnica de emergencia para desinflamar el colon y eliminar líquidos retenidos rápidamente.</p>
+                <small>Valorado en: <strike>$27 USD</strike></small>
+            </div>
+
+            <div class="bonus-box" style="color: #222;">
+                <span class="bonus-tag">GRATIS</span>
+                <h3>2. Escudo Anti-Ansiedad</h3>
+                <p>Cómo silenciar los antojos nocturnos por dulce y carbohidratos de forma natural.</p>
+                <small>Valorado en: <strike>$37 USD</strike></small>
+            </div>
+
+            <div class="bonus-box" style="color: #222;">
+                <span class="bonus-tag">GRATIS</span>
+                <h3>3. Elixir de la Juventud</h3>
+                <p>El secreto de las japonesas para mantener la piel firme mientras pierden peso.</p>
+                <small>Valorado en: <strike>$25 USD</strike></small>
+            </div>
+
+            <a href="LINK_DE_CHECKOUT_AQUI" class="cta-button">
+                ¡SÍ! QUIERO ACTIVAR MI INTERRUPTOR AHORA
+            </a>
+            
+            <p><small>PAGO ÚNICO - ACCESO DE POR VIDA</small></p>
         </div>
 
-        <h2 class="section-title">O que você vai descobrir:</h2>
+        <section style="margin-top: 50px; text-align: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/4766/4766928.png" width="80" alt="Garantia">
+            <h3>7 Días de Garantía Total</h3>
+            <p>Si no notas tu ropa más floja o si no te sientes con más energía, te devolvemos el 100% de tu inversión. Sin preguntas.</p>
+        </section>
 
-        <div class="step-card">
-            <h3>1. O Destravar Mental</h3>
-            <p>Como desligar os pensamentos de estresse e "contas a pagar" que bloqueiam seu prazer instantaneamente.</p>
-        </div>
-
-        <div class="step-card">
-            <h3>2. Gatilhos Reativos</h3>
-            <p>Diferente dos homens, sua libido precisa de estímulos específicos. Aprenda quais são e como usá-los a seu favor.</p>
-        </div>
-
-        <div class="step-card">
-            <h3>3. Comunicação Magnética</h3>
-            <p>Como guiar seu parceiro para o que te dá prazer, sem ferir o ego dele e sem parecer vulgar.</p>
-        </div>
-
-        <img src="ebook.png" alt="Ebook Libido Sem Segredo" class="product-img">
-
-        <div class="bonus-box">
-            <h3>PRESENTES EXCLUSIVOS (SÓ HOJE):</h3>
-            <div class="bonus-item"><b>BÔNUS 1:</b> Guia Mensagens Hot (O que enviar para ele)</div>
-            <div class="bonus-item"><b>BÔNUS 2:</b> O Check-list da Esposa Inesquecível</div>
-            <div class="bonus-item"><b>BÔNUS 3:</b> Guia de Áudios que Atiçam</div>
-            <p style="text-align:center; color: var(--cta-bg); font-weight:bold; margin-top:15px;">TOTAL: R$ 111,00 em bônus (GRÁTIS)</p>
-        </div>
-
-        <div class="price-tag">
-            <span class="old-price">De R$ 197,00 por apenas</span>
-            <span class="new-price">R$ 27,00</span>
-            <p>Pagamento único. Acesso imediato no seu e-mail.</p>
-        </div>
-
-        <a href="https://pay.kiwify.com.br/arVs7XV" class="btn-cta">
-            QUERO MEU DESEJO DE VOLTA
-            <span style="display:block; font-size: 0.8rem; font-weight: normal; opacity: 0.9;">Clique aqui para garantir sua vaga</span>
-        </a>
-
-        <div class="guarantee-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/758/758671.png" width="50" style="margin-right: 15px;">
-            <p><b>RISCO ZERO:</b> Você tem 7 dias de garantia total. Se não amar o conteúdo, devolvemos seu dinheiro. O risco é nosso.</p>
-        </div>
-
-        <div style="text-align: center; margin-top: 30px; opacity: 0.5;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Selos_Pagamento_Compra_Segura.png" width="200">
-        </div>
-
-    </div>
+    </main>
 
     <footer>
-        <p><strong>LIBIDO SEM SEGREDO © 2026</strong></p>
-        <p>Este produto não substitui acompanhamento médico ou psicológico.</p>
-        <p style="margin-top:10px;">Privacidade | Termos de Uso</p>
+        <p>Pagos protegidos por encriptación SSL</p>
+        <div class="trust-icons">
+            <!-- Ícones de cartões e métodos locais -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard">
+            <img src="https://www.oxxo.com/assets/img/logo-oxxo.png" alt="OXXO">
+            <img src="https://logospng.org/download/mercado-pago/logo-mercado-pago-2048.png" alt="Mercado Pago">
+        </div>
+        <p>&copy; 2023 El Interruptor de Grasa™ - Todos los derechos reservados.</p>
+        <p style="font-size: 10px; color: #999;">Este sitio no forma parte de Facebook o Google. Los resultados pueden variar de persona a persona.</p>
     </footer>
 
+    <script>
+        // Lógica de Escassez Dinâmica
+        let count = 14;
+        const slotsEl = document.getElementById('slots');
+        setInterval(() => {
+            if (count > 3) {
+                count--;
+                slotsEl.innerText = count;
+            }
+        }, 15000);
+
+        // Simulador de Cidade (Para API real use ipapi.co ou similar)
+        const cities = ["Ciudad de México", "Buenos Aires", "Monterrey", "Córdoba", "Guadalajara", "Rosario"];
+        document.getElementById('city').innerText = cities[Math.floor(Math.random() * cities.length)];
+    </script>
 </body>
 </html>
