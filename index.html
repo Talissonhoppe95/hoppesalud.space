@@ -1,265 +1,218 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Interruptor de Grasa™ - Método Japonés</title>
-    <!-- Fontes de Autoridade -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* CSS - DESIGN DE ALTA CONVERSÃO */
-        :root {
-            --primary-color: #004151; /* Azul Petróleo Autoridade */
-            --accent-color: #FF8C00;  /* Laranja Ação */
-            --bg-light: #F9F9F9;
-            --text-dark: #222;
-            --white: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocolo de 22 Días | Método Científico</title>
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
-        /* Banner de Escassez */
-        .scarcity-banner {
-            background-color: #d10000;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-            font-weight: bold;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+<style>
+:root {
+  --pink-primary: #d81e5b; 
+  --gold: #b4945c;
+  --green-cta: #22c55e;
+  --dark: #120307;
+  --white: #ffffff;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
 
-        /* Headline */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(rgba(0,65,81,0.9), rgba(0,65,81,0.9)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            color: white;
-        }
+body { background-color: #fcfcfc; color: var(--dark); line-height: 1.5; overflow-x: hidden; }
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
+.wrapper { max-width: 500px; margin: auto; background: #fff; min-height: 100vh; display: flex; flex-direction: column; }
 
-        .highlight { color: var(--accent-color); }
+/* BARRA SUPERIOR */
+.top-bar {
+  background: var(--dark);
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-        /* VSL (Vídeo Placeholder) */
-        .vsl-container {
-            background: #000;
-            width: 100%;
-            aspect-ratio: 16/9;
-            margin: 30px 0;
-            border: 4px solid var(--accent-color);
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
+/* HEADLINE CON IMAGEN DE FONDO */
+.header { 
+    padding: 40px 20px; 
+    text-align: center; 
+    position: relative;
+    /* Imagen de fondo suave relacionada con salud/bienestar */
+    background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), 
+                url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=600');
+    background-size: cover;
+    background-position: center;
+}
+.header h1 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 28px; 
+    line-height: 1.1; 
+    color: var(--dark);
+}
+.header span { color: var(--pink-primary); display: block; margin-top: 5px; }
 
-        /* Slippery Slope Text Section */
-        .story-section {
-            padding: 40px 0;
-            font-size: 1.2rem;
-            text-align: left;
-        }
+/* CONTAINER VIDEO (VSL) */
+.video-container {
+    width: 100%;
+    background: #000;
+    position: relative;
+    padding: 56.25% 0 0 0; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.video-container iframe, .video-container div {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}
 
-        .story-section p {
-            margin-bottom: 25px;
-        }
+/* CONTENIDO CON DELAY (OCULTO INICIALMENTE) */
+#delayed-content {
+    display: none; /* Se activa con JS */
+}
 
-        .bold { font-weight: 700; }
+/* BOTÓN PULSANTE VERDE */
+.cta-green {
+    display: block;
+    background: linear-gradient(180deg, #28a745 0%, #1e7e34 100%);
+    color: white;
+    text-align: center;
+    padding: 22px 15px;
+    margin: 30px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 19px;
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.5);
+    animation: pulse-green 1.5s infinite;
+}
 
-        /* Botão Pulsante */
-        .cta-button {
-            display: block;
-            background-color: var(--accent-color);
-            color: white;
-            text-align: center;
-            padding: 25px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            margin: 40px 0;
-            animation: pulse 2s infinite;
-            box-shadow: 0px 5px 15px rgba(255,140,0,0.4);
-        }
+@keyframes pulse-green {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { transform: scale(1.04); box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+  100% { transform: scale(1); }
+}
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
+/* INFO PRODUCTO */
+.product-info {
+    padding: 50px 20px;
+    background: #fff5f8;
+    text-align: center;
+}
+.small-product-img {
+    width: 190px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 15px 20px rgba(216, 30, 91, 0.2));
+}
 
-        /* Bonus Cards */
-        .bonus-box {
-            background: white;
-            border: 2px dashed var(--primary-color);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-        }
+/* STORIES DEPOIMENTOS */
+.stories-title { text-align: center; font-family: 'Playfair Display', serif; margin: 40px 0 10px 0; font-size: 24px; }
+.stories-container {
+    display: flex;
+    gap: 8px;
+    padding: 0 15px 40px 15px;
+    justify-content: center;
+}
+.story-video {
+    width: 32%;
+    aspect-ratio: 9/16;
+    background: #000;
+    border-radius: 12px;
+    border: 2px solid var(--pink-primary);
+    overflow: hidden;
+}
 
-        .bonus-tag {
-            background: #28a745;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
+/* GARANTÍA */
+.guarantee-box { text-align: center; padding: 50px 25px; border-top: 1px solid #eee; }
+.guarantee-img { width: 110px; margin-bottom: 20px; }
 
-        /* Trust Section */
-        .trust-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
+/* FOOTER (SIEMPRE VISIBLE) */
+.footer { 
+    margin-top: auto; 
+    padding: 40px 20px; 
+    text-align: center; 
+    font-size: 11px; 
+    color: #888; 
+    background: #f4f4f4;
+}
+.footer a { color: #888; text-decoration: underline; margin: 0 5px; }
 
-        .trust-icons img {
-            height: 40px;
-            filter: grayscale(1);
-            opacity: 0.7;
-        }
-
-        footer {
-            background: #eee;
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .cta-button { font-size: 1.1rem; }
-        }
-    </style>
+</style>
 </head>
 <body>
 
-    <div class="scarcity-banner">
-        ⚠️ OFERTA VÁLIDA SOLO PARA LAS PRÓXIMAS <span id="slots">14</span> PERSONAS EN <span id="city">TU CIUDAD</span>
-    </div>
+<div class="wrapper">
+    <div class="top-bar">Atención: Video disponible por tiempo limitado</div>
 
-    <header>
-        <div class="container">
-            <h1>El secreto japonés de 30 segundos que <span class="highlight">"enciende"</span> tu metabolismo cada mañana</h1>
-            <p>Mira este video antes de que sea eliminado de internet.</p>
-            
-            <div class="vsl-container">
-                <!-- Coloque aqui o link do seu vídeo (Vimeo/Youtube/Vturb) -->
-                <p style="color:white">► CLIC PARA REPRODUCIR EL VIDEO</p>
-            </div>
-        </div>
+    <header class="header">
+        <h1>Mira cómo activar tu "hormona quemadora" y <span>adelgazar en solo 22 días</span></h1>
     </header>
 
-    <main class="container">
-        <section class="story-section">
-            <p>Durante mucho tiempo, <span class="bold">pensé que el problema era yo.</span></p>
-            <p>Falta de voluntad. Falta de disciplina. Falta de amor propio.</p>
-            <p>Me despertaba cansada, me miraba al espejo y ya no reconocía a esa mujer...</p>
-            <p>Pero lo que descubrí en un pequeño parque de Japón cambió mi destino para siempre.</p>
-            
-            <p style="text-align:center; font-style:italic;">"El cuerpo no decide quemar grasa por voluntad propia, lo hace por señales químicas."</p>
+    <!-- VSL VIDEO -->
+    <div class="video-container">
+        <!-- COPIA AQUÍ TU CÓDIGO DE VTURB -->
+        <div id="vid_vsl_main">
+            <p style="color:white; text-align:center; padding-top:25%;">Cargando video...</p>
+        </div>
+    </div>
 
-            <p>Ese es el <span class="bold">Interruptor de Grasa™</span>. Un botón biológico que tienes dentro, pero que ha estado apagado por años.</p>
-            <p>Cuando este interruptor está apagado, puedes comer solo ensaladas y tu cuerpo seguirá guardando grasa en tu panza y caderas.</p>
-            <p>Pero cuando lo enciendes... <span class="bold">todo cambia.</span></p>
+    <!-- TODO ESTE BLOQUE APARECERÁ DESPUÉS DE 4 SEGUNDOS -->
+    <div id="delayed-content">
+        
+        <a href="#checkout" class="cta-green">
+            ¡SÍ! QUIERO EL PROTOCOLO AHORA
+        </a>
+
+        <section class="product-info">
+            <img src="https://i.ibb.co/L9Y00m5/Sua-Imagem-Aqui.png" alt="Protocolo 22 Días" class="small-product-img">
+            <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">El Protocolo de 22 Días no es "una dieta más"</h2>
+            <p style="font-size: 15px; font-weight: 500;">
+                Es una reprogramación hormonal diseñada para el cuerpo de la mujer. Sin pasar hambre, sin ejercicios agotadores y con resultados visibles desde la primera semana.
+            </p>
         </section>
 
-        <!-- SEÇÃO DE OFERTA -->
-        <div style="background: var(--primary-color); color: white; padding: 30px; border-radius: 15px; text-align: center;">
-            <h2 style="font-family: 'Playfair Display';">¿Lista para activar tu Interruptor?</h2>
-            <p>Obtén el método completo más estos 3 bonos exclusivos hoy:</p>
-
-            <div class="bonus-box" style="color: #222;">
-                <span class="bonus-tag">GRATIS</span>
-                <h3>1. Protocolo Vientre Plano (72h)</h3>
-                <p>La técnica de emergencia para desinflamar el colon y eliminar líquidos retenidos rápidamente.</p>
-                <small>Valorado en: <strike>$27 USD</strike></small>
+        <h2 class="stories-title">Resultados Reales</h2>
+        <p style="text-align: center; font-size: 12px; color: #999; margin-bottom: 15px;">Toca para ver los testimonios</p>
+        
+        <div class="stories-container">
+            <div class="story-video">
+                <!-- Vturb Story 1 -->
             </div>
-
-            <div class="bonus-box" style="color: #222;">
-                <span class="bonus-tag">GRATIS</span>
-                <h3>2. Escudo Anti-Ansiedad</h3>
-                <p>Cómo silenciar los antojos nocturnos por dulce y carbohidratos de forma natural.</p>
-                <small>Valorado en: <strike>$37 USD</strike></small>
+            <div class="story-video">
+                <!-- Vturb Story 2 -->
             </div>
-
-            <div class="bonus-box" style="color: #222;">
-                <span class="bonus-tag">GRATIS</span>
-                <h3>3. Elixir de la Juventud</h3>
-                <p>El secreto de las japonesas para mantener la piel firme mientras pierden peso.</p>
-                <small>Valorado en: <strike>$25 USD</strike></small>
+            <div class="story-video">
+                <!-- Vturb Story 3 -->
             </div>
-
-            <a href="LINK_DE_CHECKOUT_AQUI" class="cta-button">
-                ¡SÍ! QUIERO ACTIVAR MI INTERRUPTOR AHORA
-            </a>
-            
-            <p><small>PAGO ÚNICO - ACCESO DE POR VIDA</small></p>
         </div>
 
-        <section style="margin-top: 50px; text-align: center;">
-            <img src="https://cdn-icons-png.flaticon.com/512/4766/4766928.png" width="80" alt="Garantia">
-            <h3>7 Días de Garantía Total</h3>
-            <p>Si no notas tu ropa más floja o si no te sientes con más energía, te devolvemos el 100% de tu inversión. Sin preguntas.</p>
+        <a href="#checkout" class="cta-green">
+            ¡EMPEZAR MI TRANSFORMACIÓN HOY!
+        </a>
+
+        <section class="guarantee-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Seal_of_Approval.svg/1024px-Seal_of_Approval.svg.png" class="guarantee-img" alt="Garantía">
+            <h3 style="color: var(--gold); text-transform: uppercase; font-size: 16px;">Garantía de Satisfacción Total</h3>
+            <p style="font-size: 13px; margin-top: 10px; color: #555;">
+                Prueba el Protocolo por 7 días. Si no ves resultados o no estás satisfecha, te devolvemos el 100% de tu dinero. Sin preguntas.
+            </p>
         </section>
+    </div>
 
-    </main>
-
-    <footer>
-        <p>Pagos protegidos por encriptación SSL</p>
-        <div class="trust-icons">
-            <!-- Ícones de cartões e métodos locais -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard">
-            <img src="https://www.oxxo.com/assets/img/logo-oxxo.png" alt="OXXO">
-            <img src="https://logospng.org/download/mercado-pago/logo-mercado-pago-2048.png" alt="Mercado Pago">
-        </div>
-        <p>&copy; 2023 El Interruptor de Grasa™ - Todos los derechos reservados.</p>
-        <p style="font-size: 10px; color: #999;">Este sitio no forma parte de Facebook o Google. Los resultados pueden variar de persona a persona.</p>
+    <footer class="footer">
+        <p><strong>Protocolo de 22 Días</strong></p>
+        <p style="margin: 10px 0;">
+            <a href="#">Términos de Uso</a> | <a href="#">Políticas de Privacidad</a>
+        </p>
+        <p>Este sitio no es parte de Facebook o Google. Los resultados pueden variar según el organismo.</p>
     </footer>
+</div>
 
-    <script>
-        // Lógica de Escassez Dinâmica
-        let count = 14;
-        const slotsEl = document.getElementById('slots');
-        setInterval(() => {
-            if (count > 3) {
-                count--;
-                slotsEl.innerText = count;
-            }
-        }, 15000);
+<script>
+    // SCRIPT DE DELAY (9000 milisegundos = 4 segundos)
+    setTimeout(function() {
+        document.getElementById('delayed-content').style.display = 'block';
+    }, 4000);
+</script>
 
-        // Simulador de Cidade (Para API real use ipapi.co ou similar)
-        const cities = ["Ciudad de México", "Buenos Aires", "Monterrey", "Córdoba", "Guadalajara", "Rosario"];
-        document.getElementById('city').innerText = cities[Math.floor(Math.random() * cities.length)];
-    </script>
 </body>
 </html>
