@@ -146,26 +146,56 @@ body { background-color: #fcfcfc; color: var(--dark); line-height: 1.5; overflow
     <header class="header">
         <h1>Mira cómo activar tu "hormona quemadora" y <span>adelgazar en solo 22 días</span></h1>
     </header>
+  
+  <!-- 1. Onde o vídeo vai aparecer -->
+<div id="player"></div>
 
-    <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Meu Site com Vídeo</title>
-</head>
-<body>
-    <h1>Confira meu vídeo:</h1>
-    
-    <!-- Código do YouTube abaixo -->
-<iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/_vX17BOo2-s?autoplay=1&mute=1" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-</iframe>
-</body>
-</html>
+<!-- 2. Seu botão personalizado -->
+<br>
+<button onclick="ligarSom()" id="btnSom" style="padding: 10px; cursor:pointer;">
+    🔊 Activar El Sonido
+</button>
+
+<script>
+    // 3. Carrega a API do YouTube
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '315',
+            width: '560',
+            videoId: '_vX17BOo2-s', // <--- COLOQUE O SEU ID AQUI
+            playerVars: {
+                'autoplay': 1,
+                'mute': 1, // Começa mudo para o autoplay funcionar
+                'controls': 1
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+
+    // 4. Função do seu botão para tirar o mudo
+    function ligarSom() {
+        if (player.isMuted()) {
+            player.unMute();
+            document.getElementById('btnSom').innerText = "🔈 Mutar";
+        } else {
+            player.mute();
+            document.getElementById('btnSom').innerText = "🔊 Activar El Sonido";
+        }
+    }
+</script>
+  
 </div>
 
     </div>
