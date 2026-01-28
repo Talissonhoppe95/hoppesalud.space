@@ -1,3 +1,13 @@
+/* Diminui o espaço abaixo do vídeo */
+video {
+    margin-bottom: 5px; /* Altere para 0 se quiser encostar */
+}
+
+/* OU diminui o espaço acima do botão */
+button {
+    margin-top: 5px;
+}
+
 /* style.css */
 
 .youtube-responsive-container {
@@ -282,5 +292,6 @@ ul li {
 .cta-wrapper { position: sticky; bottom: 10px; z-index: 999; padding: 10px; }
 .big-headline { font-family: 'Playfair Display', serif; font-size: 2.4rem; line-height: 1.1; color: #fff; margin-bottom: 20px; }
 .sub-headline { font-size: 1.1rem; color: #ffb6d5; font-weight: 400; line-height: 1.4; }
+
 
 
