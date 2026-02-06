@@ -273,13 +273,16 @@
 </div>
 
 <script>
-    // Tempo em milissegundos para mostrar o botão (Ex: 420000 = 7 minutos)
-    // Para TESTAR, use 5000 (5 segundos). Depois mude de volta.
-    var tempoDeEspera = 40000; 
-
+window.addEventListener('load', function() {
+    var tempoDeEspera = 5000; // 5 segundos para teste
+    
     setTimeout(function(){
-        document.getElementById('delayed-content').style.display = 'block';
+        var el = document.getElementById('delayed-content');
+        if(el) {
+            el.style.display = 'block';
+        }
     }, tempoDeEspera);
+});
 </script>
 
 </body>
