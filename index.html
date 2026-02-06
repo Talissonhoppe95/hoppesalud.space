@@ -272,26 +272,5 @@
     </footer>
 </div>
 
-<script>
-// Aguarda todo o HTML e recursos carregarem antes de iniciar o contador
-window.addEventListener('load', function() {
-    console.log("Página carregada, iniciando contador...");
-    
-    var tempoMinutos = 7; // Ajuste o tempo aqui
-    var milissegundos = tempoMinutos * 60 * 1000;
-
-    setTimeout(function() {
-        var conteudo = document.getElementById('delayed-content');
-        if (conteudo) {
-            conteudo.style.display = 'block';
-            console.log("Conteúdo liberado!");
-        } else {
-            // Caso o ID mude, ele avisa no console
-            console.error("Erro: A div delayed-content não foi encontrada.");
-        }
-    }, milissegundos);
-});
-</script>
-
 </body>
 </html>
